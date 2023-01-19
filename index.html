@@ -63,8 +63,9 @@
     const inputs = document.querySelectorAll('.controls input');
 
     function handleUpdate(){
-      //const suffix = this.dataset;
-      console.log(this.dataset);
+      const suffix = this.dataset.sizing || '';
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+      //console.log(this.name);
     }
 //listens for a change event on each input
     inputs.forEach(input => input.addEventListener('change', handleUpdate));
@@ -75,6 +76,8 @@
     //previously learned that data-anything ex: data-sizing is just a data attribute that is made up. just put data dash(data-) in front of the word.
     //Ex:data-name data-newCar data-cool data-colors
     //Console log this.dataset and an object of the data attributes and show them in the console when ran 
+
+    //something is up with my blur
   </script>
 
 </body>
